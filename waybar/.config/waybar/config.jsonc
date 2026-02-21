@@ -1,0 +1,172 @@
+//{
+//    "layer": "top",
+//    "position": "top",
+//    "height": 30,
+//    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+//    "modules-center": ["clock"],
+//    "modules-right": ["pulseaudio", "network", "tray"],
+//
+//    // Módulos específicos de Hyprland (reemplazan a los de Sway)
+//    "hyprland/workspaces": {
+//        "format": "{name}",
+//        "on-click": "activate"
+//    },
+//    "hyprland/window": {
+//        "max-length": 50
+//    },
+//    
+//    // Reloj
+//    "clock": {
+//        "format": "{:%H:%M}  ",
+//        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+//    },
+//
+//    // Audio
+//    "pulseaudio": {
+//        "format": "{volume}% ",
+//        "format-muted": "Mute ",
+//        "on-click": "pavucontrol"
+//    },
+//
+//    // Red
+//    "network": {
+//        "format-wifi": "{essid} ",
+//        "format-ethernet": "Ethernet ",
+//        "format-disconnected": "Disconnected ⚠"
+//    }
+//}
+
+{
+
+    "layer": "top",
+    "position": "top",
+    "width": 1000,
+    "height": 32,
+    "margin-top": 5,
+    "spacing": 5,
+
+    // modules layout
+    "modules-left": ["custom/launcher" ,"wlr/taskbar"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["pulseaudio/slider","pulseaudio","clock", "network"], //,"disk", "cpu", "memory"
+
+
+    //hyprland modules
+    "custom/launcher": {
+      "format":"󰣇",
+      "on-click": "rofi -show drun"
+    },
+    
+    "hyprland/workspaces": {
+      "on-click": "activate",
+      "format": "{icon}",
+      "persistent-workspaces": {
+          "1": [], 
+          "2": [],
+          "3": [], 
+          "4": [], 
+          "5": [],
+          "6": [],
+          "7": [],
+          "8": []
+        }
+      },
+
+    "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 20,
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "on-click-right": "minimize",
+    "group-by": "app-id",
+    "ignore-list": [
+        "wofi",
+        "waybar"
+    ]
+    },
+
+    "pulseaudio": {
+      "format": " {icon}  {volume} ",
+      "format-muted": "󰖁",
+      "format-icons": {
+        "headphone": "󰋎",
+        "headset": "󰋎",
+        "default":[
+          "󰕿",
+          "󰕾"
+        ]
+      },
+      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle", // Clic Izquierdo: Mute/Unmute
+      "on-click-right": "pavucontrol",                          // Clic Derecho: Abrir mezclador
+    
+      "pulseaudio/slider": {
+          "min": 1,
+          "max": 100,
+          "orientation": "horizontal" 
+        }
+      },
+
+ 
+
+    "bluetooth": {
+      "on-click": "blueman-manager",
+      "format": "<span>  </span>{device}",
+      "format-disconnected": "<span>  </span>"
+    },
+
+    "clock": {
+      "format": "<span>   {:%H : %M} </span>",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+
+    },
+
+    "network": {
+      "format-wifi": "<span>   {essid} </span>",
+      "format-ethernet": "<span> 󰡰 </span>",
+      "format-disconnected": "<span> 󰲛 </span>"
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
