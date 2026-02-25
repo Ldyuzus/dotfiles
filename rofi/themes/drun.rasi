@@ -1,0 +1,141 @@
+* {
+    
+    bg-col:  rgba(78, 78, 78, 0.8);
+    bg-col-light: #24273a;
+    border-col: #24273a;
+    selected-col: #373738;
+    search: #1f1f1fac;
+    fg-col: #cfcfcf;
+    fg-col2: #ed8796;
+    grey: #909090;
+    teal: #a7a6a6;
+    
+    width: 900;
+    border-radius: 15px;
+}
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+    height: 400px;
+    border: 1.5px;
+    border-color: @teal;
+    background-color: @bg-col;
+}
+
+mainbox {
+    background-color: @bg-col;
+    orientation: vertical;
+    children: [listbox, imagebox];
+}
+
+imagebox{
+    boder-radius: inherit;
+    margin: 0px 0px 0px 0px; 
+    padding: 0px 0px 0px 0px;
+    expand: false;
+    background-color: transparent;
+    background-image: url("/home/ldyuzus/Imágenes/Aira_lazyCat/PNf-drun.png", width);
+    width: 55px;
+}
+
+listbox {
+    padding: 20px 10px 30px 10px;
+    orientation: vertical;
+    children: [inputbar, listview];
+    background-color: transparent;
+    expand: true;      
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 6px 0px 0px;
+    margin: 10px 0px 0px 20px;
+    columns: 2;
+    lines: 5;
+    background-color: @bg-col;
+}
+
+inputbar {
+    height: 90;
+    orientation: horizontal;
+    children: [prompt, entry, imagebox];
+    background-color: @bg-col;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+prompt {
+    background-color: @search;
+    padding: 6px;
+    text-color: @teal;
+    border-radius: 3px;
+    margin: 20px 0px 0px 20px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    border: 1.5px;
+    border-color: @grey;
+    placeholder:"";
+    hide-cursor-on-empty: true;
+    cursor: pointer;
+    padding: 6px;
+    margin: 20px 20px 0px 10px;
+    text-color: @fg-col;
+    background-color: @search;
+    border-radius: 4px;
+}
+
+element {
+    padding: 10px;
+    background-color: @bg-col;
+    text-color: @fg-col  ;
+}
+
+element-icon {
+    size: 25px;
+}
+
+element selected {
+    background-color:  @selected-col ;
+    text-color: @teal  ;
+}
+
+mode-switcher {
+    spacing: 0;
+  }
+
+button {
+    padding: 10px;
+    background-color: @bg-col-light;
+    text-color: @grey;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+button selected {
+    background-color: @bg-col;
+    text-color: @search;
+}
+
+message {
+    background-color: @bg-col-light;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+textbox {
+    padding: 6px;
+    margin: 20px 0px 0px 20px;
+    text-color: @search;
+    background-color: @bg-col-light;
+}

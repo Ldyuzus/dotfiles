@@ -1,0 +1,51 @@
+* {
+	margin: 0;
+	padding: 0;
+	background-image: none;
+	box-shadow: none;
+}
+
+window {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+button {
+	margin: 8px 8px 8px 8px;
+  border-radius: 20px;
+	text-decoration-color: #ffffff;
+  color: #ffffff;
+	background-color: rgba(22, 22, 22, 0.8);
+	border-style: none;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 25%;
+}
+
+button:focus, button:active, button:hover {
+	background-color: #7a7a7a;
+	outline-style: none;
+}
+
+#lock {
+  background-image: image(url("/home/ldyuzus/Descargas/cerrar.png"), url("/home/ldyuzus/Descargas/cerrar.png"));
+}
+
+#logout {
+    background-image: image(url("/home/ldyuzus/Descargas/logout.png"), url("/home/ldyuzus/Descargas/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/home/ldyuzus/Descargas/luna.png"), url("/home/ldyuzus/Descargas/luna.png"));
+}
+
+#hibernate {
+    background-image: image(url("/home/ldyuzus/Descargas/hibernate.png"), url("/home/ldyuzus/Descargas/Hibernate.png"));
+}
+
+#shutdown {
+    background-image: image(url("/home/ldyuzus/Descargas/energia.png"), url("/home/ldyuzus/Descargas/energia.png"));
+}
+
+#reboot {
+    background-image: image(url("/home/ldyuzus/Descargas/reboot.png"), url("/home/ldyuzus/Descargas/reboot.png"));
+}

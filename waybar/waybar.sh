@@ -7,7 +7,7 @@ killall waybar
 waybar &
 
 # Vigilar la carpeta de configuración por cualquier cambio
-while inotifywait -e modify,create,delete -r ~/.config/waybar; do
+while inotifywait -e modify,create,delete -r ~/Dotfiles/waybar; do
     # Cuando detecta un cambio, envía la señal de recarga suave
     killall -SIGUSR2 waybar
 done
