@@ -55,7 +55,7 @@
     "custom/launcher": {
       "spacing": "inherit",  
       "format":"󰣇",
-      "on-click": "rofi -show drun"
+      "on-click": "rofi -show drun -theme /home/ldyuzus/Dotfiles/rofi/drun_file.rasi"
     },
     
     "hyprland/workspaces": {

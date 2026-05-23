@@ -1,17 +1,10 @@
-* {
-    
-    bg-col:  rgba(78, 78, 78, 0.8);
-    bg-col-light: #24273a;
-    border-col: #24273a;
-    selected-col: #373738;
-    search: #1f1f1fac;
-    fg-col: #cfcfcf;
-    fg-col2: #ed8796;
-    grey: #909090;
-    teal: #a7a6a6;
-    
-    width: 900;
-    border-radius: 15px;
+@import "config.rasi"
+
+configuration {
+  modes: ["drun", "filebrowser"];
+  drun-display-format: "{icon} {name}";
+  display-drun: " 󰩉 ";
+  display-filebrowser: " 󱧶 ";
 }
 
 element-text, element-icon , mode-switcher {
@@ -19,11 +12,13 @@ element-text, element-icon , mode-switcher {
     text-color:       inherit;
 }
 
-window {
+window {    
+    width: 900;
+    border-radius: 15px;
     height: 400px;
     border: 1.5px;
     border-color: @teal;
-    background-color: @bg-col;
+    location: center;
 }
 
 mainbox {
@@ -100,11 +95,16 @@ element {
     text-color: @fg-col  ;
 }
 
+scrollbar {
+
+}
+
 element-icon {
     size: 25px;
 }
 
 element selected {
+    margint: 10px 10px 10px 10px;
     background-color:  @selected-col ;
     text-color: @teal  ;
 }
