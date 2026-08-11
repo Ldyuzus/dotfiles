@@ -27,25 +27,25 @@ button:focus, button:active, button:hover {
 }
 
 #lock {
-  background-image: image(url("/home/ldyuzus/Descargas/cerrar.png"), url("/home/ldyuzus/Descargas/cerrar.png"));
+  background-image: image(url("/home/ldyuzus/Dotfiles/wlogout/Icons/cerrar.png"), url("/home/ldyuzus/Dotfiles/wlogout/Icons/cerrar.png"));
 }
 
 #logout {
-    background-image: image(url("/home/ldyuzus/Descargas/logout.png"), url("/home/ldyuzus/Descargas/logout.png"));
+    background-image: image(url("/home/ldyuzus/Dotfiles/wlogout/Icons/logout.png"), url("/home/ldyuzus/Dotfiles/wlogout/Icons/logout.png"));
 }
 
 #suspend {
-    background-image: image(url("/home/ldyuzus/Descargas/luna.png"), url("/home/ldyuzus/Descargas/luna.png"));
+    background-image: image(url("/home/ldyuzus/Dotfiles/wlogout/Icons/luna.png"), url("/home/ldyuzus/Dotfiles/wlogout/Icons/luna.png"));
 }
 
 #hibernate {
-    background-image: image(url("/home/ldyuzus/Descargas/hibernate.png"), url("/home/ldyuzus/Descargas/Hibernate.png"));
+    background-image: image(url("/home/ldyuzus/Dotfiles/wlogout/Icons/Hibernate.png"), url("/home/ldyuzus/Dotfiles/wlogout/Icons/Hibernate.png"));
 }
 
 #shutdown {
-    background-image: image(url("/home/ldyuzus/Descargas/energia.png"), url("/home/ldyuzus/Descargas/energia.png"));
+    background-image: image(url("/home/ldyuzus/Dotfiles/wlogout/Icons/energia.png"), url("/home/ldyuzus/Dotfiles/wlogout/Icons/energia.png"));
 }
 
 #reboot {
-    background-image: image(url("/home/ldyuzus/Descargas/reboot.png"), url("/home/ldyuzus/Descargas/reboot.png"));
+    background-image: image(url("/home/ldyuzus/Dotfiles/wlogout/Icons/reboot.png"), url("/home/ldyuzus/Dotfiles/wlogout/Icons/reboot.png"));
 }
