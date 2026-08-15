@@ -59,7 +59,11 @@
     },
     
     "hyprland/workspaces": {
-      "on-click": "activate",
+       "disable-scroll": false,
+    "all-outputs": true,
+     "on-click": "activate",
+     "on-scroll-up": "hyprctl dispatch workspace e+1",
+      "on-scroll-down": "hyprctl dispatch workspace e-1",
       "format": "{icon}",
       "persistent-workspaces": {
           "1": [], 
@@ -71,7 +75,7 @@
         }
       },
 
-    "wlr/taskbar": {
+    "hyprland/taskbar": {
     "format": "{icon}",
     "icon-size": 20,
     "on-click": "activate",
