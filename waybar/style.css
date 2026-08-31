@@ -120,7 +120,7 @@ label:focus {
     background-color: #c2c7ca;
 }
 
-/* MODULES LEFT*/
+/* MODULES LEFT
 #taskbar {
     border: solid 1.5px #3a3a3a;
     border-radius: 10px;
@@ -130,10 +130,10 @@ label:focus {
     opacity: 0;
     background-color: transparent;
 }
+*/
 
 #custom-launcher {
-    padding-right: 15px;
-    padding: 0px 10px 0px 10px;
+    padding: 0px 15px 0px 10px;
     border-radius: 15px;
     background-color: white;
     color: #495d6a ;

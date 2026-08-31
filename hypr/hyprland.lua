@@ -43,7 +43,7 @@ hl.monitor({
 
 -- Set programs that you use
 local terminal = "kitty"
-local fileManager = "dolphin"
+local fileManager = "nautilus"
 local menu = "rofi -show drun -theme ~/Dotfiles/rofi/drun_file.rasi"
 local window = "rofi -show window -theme ~/Dotfiles/rofi/window.rasi"
 local browser = "brave"
@@ -257,7 +257,7 @@ hl.config({
     decoration = {
         rounding       = 10,
         rounding_power = 2,
-
+        
         -- Change transparency of focused and unfocused windows
         active_opacity   = 1.0,
         inactive_opacity = 1.0,
@@ -339,7 +339,7 @@ hl.config({
       smart_split                  = false,
       smart_resizing               = true,
       permanent_direction_override = false,
-      special_scale_factor         = 1,
+    --special_scale_factor         = 1,
       split_width_multiplier       = 1.0,
       use_active_for_splits        = true,
       default_split_ratio          = 1.0,
@@ -417,7 +417,7 @@ hl.device({
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 
-local mainMod = "SUPER" -- Sets "Windows" key as main modifier
+local mainMod = "super" -- Sets "Windows" key as main modifier
 
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
@@ -431,7 +431,7 @@ hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
-hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("waypaper"))
+hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("waytrogen"))
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("wlogout"))
 
 hl.bind("Print", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | swappy -f -"))
@@ -460,13 +460,16 @@ hl.bind(mainMod .. " + SHIFT + 5", hl.dsp.window.move({ workspace = 5 }))
 hl.bind(mainMod .. " + SHIFT + 6", hl.dsp.window.move({ workspace = 6 }))
 
 hl.bind("CTRL + ALT + SHIFT + right", hl.dsp.window.move({ workspace = "+1" }))
-hl.bind("CTRL + ALT + SHIFT + left", hl.dsp.window.move({ workspace = -1 }))
+hl.bind("CTRL + ALT + SHIFT + left", hl.dsp.window.move({ workspace = "-1" }))
 
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e+1" }))
+
+hl.bind(mainMod .. " + SHIFT + mouse_down", hl.dsp.window.move({ workspace = "-1" }))
+hl.bind(mainMod .. " + SHIFT + mouse_up", hl.dsp.window.move({ workspace = "+1" }))
 
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag())
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize())

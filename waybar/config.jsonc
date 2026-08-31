@@ -46,7 +46,7 @@
     "spacing": 5,
 
     // modules layout
-    "modules-left": ["custom/launcher" ,"wlr/taskbar"],
+    "modules-left": ["custom/launcher"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["pulseaudio/slider","pulseaudio","clock", "network"], //,"disk", "cpu", "memory"
 
@@ -59,13 +59,11 @@
     },
     
     "hyprland/workspaces": {
-       "disable-scroll": false,
-    "all-outputs": true,
-     "on-click": "activate",
-     "on-scroll-up": "hyprctl dispatch workspace e+1",
-      "on-scroll-down": "hyprctl dispatch workspace e-1",
+      "disable-scroll": false,
+      "all-outputs": true,
+      "on-click": "activate",
       "format": "{icon}",
-      "persistent-workspaces": {
+        "persistent-workspaces": {
           "1": [], 
           "2": [],
           "3": [], 
@@ -75,7 +73,7 @@
         }
       },
 
-    "hyprland/taskbar": {
+    "wlr/taskbar": {
     "format": "{icon}",
     "icon-size": 20,
     "on-click": "activate",
@@ -83,10 +81,8 @@
     "on-click-right": "minimize",
     "group-by": "app-id",
     "ignore-list": [
-        "wofi",
         "waybar"
-    ]
-    },
+    ] },
 
     "pulseaudio": {
       "format": " {icon}  {volume} ",
