@@ -236,7 +236,7 @@ hl.device({
 hl.config({
     general = {
         gaps_in  = 5,
-        gaps_out = 10,
+        gaps_out = 5,
 
         border_size = 2,
 
@@ -417,7 +417,7 @@ hl.device({
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 
-local mainMod = "super" -- Sets "Windows" key as main modifier
+local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
@@ -430,7 +430,7 @@ hl.bind("ALT + Tab", hl.dsp.exec_cmd(window))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
-hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
+hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("eww open --toggle bar_widget"))
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("waytrogen"))
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("wlogout"))
 
@@ -510,17 +510,17 @@ hl.workspace_rule({
 })
 
 hl.workspace_rule({
+    workspace = "4",
+    monitor = "HDMI-A-2",
+})
+
+hl.workspace_rule({
     workspace = "5",
     monitor = "HDMI-A-2",
 })
 
 hl.workspace_rule({
     workspace = "6",
-    monitor = "HDMI-A-2",
-})
-
-hl.workspace_rule({
-    workspace = "4",
     monitor = "HDMI-A-2",
 })
 
@@ -557,6 +557,7 @@ hl.window_rule({
 -- overlayLayerRule:set_enabled(false)
 
 -- Hyprland-run windowrule
+
 hl.window_rule({
     name  = "move-hyprland-run",
     match = { class = "hyprland-run" },
@@ -567,6 +568,6 @@ hl.window_rule({
 
 hl.on("hyprland.start", function()
     hl.exec_cmd("awww-daemon")
-    hl.exec_cmd("~/.config/waybar/waybar.sh")
+    hl.exec_cmd("~/.config/eww/eww.sh &")
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XCURSOR_THEME XCURSOR_SIZE")
 end)
