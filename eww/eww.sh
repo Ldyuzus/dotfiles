@@ -4,7 +4,10 @@ killall eww
 # Iniciar el demonio y abrir la barra
 eww daemon &
 sleep 1 # Pequeña pausa para asegurar que el demonio despierte
+~/.config/eww/scripts/workspace.sh &
 eww open bar_widget
+
+
 
 # Vigilar la carpeta de configuración por cualquier cambio
 while inotifywait -e modify,create,delete -r ~/Dotfiles/eww; do

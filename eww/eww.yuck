@@ -26,7 +26,6 @@
                         (tray)
                         (volume)
                         (ram)
-                        (battery)
                         (eventbox :onhoverlost "bash -c '/usr/bin/eww update keyrev=false && /usr/bin/eww update keyhov=false && /usr/bin/eww update wifirev=false && /usr/bin/eww update wifihov=false'"
                                   (wifi)
                         )
@@ -41,7 +40,7 @@
 )
 
 (defvar trayrev false)
-(defvar username "")
+(defpoll username :interval "24h" "whoami")
 
 (defwidget tray []
     (box :orientation "h"
@@ -90,6 +89,7 @@
     "cat /sys/class/power_supply/BAT*/capacity 2>/dev/null | head -1 | grep . || echo 0"
 )
 
+ 
 (defwidget battery []
     (box :class "battery"
         (box :orientation "h"
@@ -102,6 +102,7 @@
                   )
     )
 )
+
 
 (defvar wifirev false)
 (defvar wifihov false)
@@ -323,7 +324,7 @@
     :geometry (geometry :anchor "top left"
                         :x "5px"
                         :y "-4px"
-                        :width "250px"
+                        :width "400px"
                         :height "91.9%")
     (box :space-evenly false
          (revealer :transition "slideright"
@@ -407,8 +408,8 @@
     :stacking "overlay"
     :geometry (geometry :anchor "top center"
                         :y "-15px"
-                        :width "355px"
-                        :height "41%"
+                        :width "300px"
+                        :height "30%"
     )
     (expander :expanded true
               (revealer :transition "slidedown"
@@ -571,24 +572,6 @@
                    (box :class "sysctl"
                         :orientation "v"
                         :space-evenly false
-                        (box :class "bats"
-                             :space-evenly false
-                             (box :class "batico-main"
-                                  (literal :content batico)
-                             )
-                             (box :class "bat-detail"
-                                  :orientation "v"
-                                  (box :class "bat-percent"
-                                       :space-evenly false
-                                       (label :text "Battery ${batcap}%")
-                                  )
-                                  (box :class "bat-status"
-                                       :space-evenly false
-                                       (label :limit-width 26 :text "${batest}")
-                                  )
-                             )
-                        )
-                        (box :class "divider-h")
                         (box :class "sys"
                             (box :class "cpu-box" 
                                  :orientation "v" 
@@ -729,7 +712,7 @@
          (box :orientation "h"
               :class "cpu-header"
               :space-evenly false
-              (label :text "Core Temperature" :style "color:#cdd6f4;font-size:12px;")
+              (label :text "Core Temperature" :style "color:#cdd6f4;font-size:12px")
          )
          (box :class "graph-container"
               :orientation "v"
@@ -752,16 +735,6 @@
               )
               )
          )
-         (box :class "minicore-container"
-              :orientation "v"
-              :space-evenly false
-              (for c in {coretemp.cores}
-                   (box :class "minicores"
-                        (label :class "core-mini" :text "${c.label}: ${c.temp} °C")
-                   )
-              )
-         )
-
     )
 )
 
